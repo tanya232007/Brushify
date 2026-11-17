@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brushify</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Brushify</h1>
+
+
+    <div id="editor" contenteditable="true">Write Text</div>
+
+
+
+        <button id="downloadBtn" onclick="downloadText()">Download</button>
+    
+
+
+    <div class="controls-container">
+        <div class="control-card">
+            <h2>Background</h2>
+            <div class="color-options">
+                <button class="circle-btn" style="background-color: rgb(255, 0, 187);" onclick="changeBg('pink')"></button>
+                  <button class="circle-btn" style="background-color: rgb(255, 0, 30);" onclick="changeBg('red')"></button>
+                  <button class="circle-btn" style="background-color: rgb(24, 188, 233);" onclick="changeBg('sky blue')"></button>
+                <button class="circle-btn" style="background-color: rgb(10, 46, 58);" onclick="changeBg('lightblue')"></button>
+                 <button class="circle-btn" style="background-color: rgb(78, 33, 226);" onclick="changeBg('blue')"></button>
+                
+            </div>
+        </div>
+        <div class="control-card">
+            <h2>Text Color</h2>
+            <div class="color-options">
+                <button class="circle-btn" style="background-color: black;" onclick="changeTextColor('black')"></button>
+                <button class="circle-btn" style="background-color: red;" onclick="changeTextColor('red')"></button>
+                <button class="circle-btn" style="background-color: blue;" onclick="changeTextColor('blue')"></button>
+                 <button class="circle-btn" style="background-color: skyblue;" onclick="changeTextColor('sky blue')"></button>
+                <button class="circle-btn" style="background-color: green;" onclick="changeTextColor('green')"></button>
+            </div>
+        </div>
+        <div class="control-card">
+            <h2>Font Style</h2>
+            <select id="fontSelector" onchange="changeFont(this.value)">
+                <option value="Arial">Arial</option>
+                <option value="Courier New">Courier New</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Verdana">Verdana</option>
+            </select>
+        </div>
+
+    </div>
+    
+
+    <script>
+        function changeBg(color) {
+            document.getElementById("editor").style.backgroundColor = color;
+        }
+
+        function changeTextColor(color) {
+            document.getElementById("editor").style.color = color;
+        }
+
+        function changeFont(font) {
+            document.getElementById("editor").style.fontFamily = font;
+        }
+    </script>
+
+</body>
+</html>
